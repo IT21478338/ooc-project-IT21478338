@@ -189,9 +189,74 @@ cout << "Destructor runs" << endl;
 
 
 
+///////////////////////////////////Main.cpp
 
+#include <iostream>
+using namespace std;
 
+#include "Customer.h"
+#include "Account.h"
+#include "Login.h"
+#include "Password.h"
+#include "Payment.h"
+#include "BillPayment.h"
+#include "LoanPayment.h"
+#include "Transection.h"
+#include "MonthlyReport.h"
+#include "Complains.h"
+#include "Employee.h"
 
+int main()
+{
+	//---- Object creation & Method Calling------
+	
+	payment *Pay[2];
+	Pay[0] = new BillPayment("Electricity Bill", 2861, "Online");     // Object - BillPayment
+	Pay[1] = new LoanPayment("Monthly Rent", 14000, "Online");     // Object - LoanPayment
+	
+	Customer * cust;
+	cust = new Customer(200100100489,"Emma", "500/27 isurupura road colombo-15", "EmmaSufa@gmail.com", 1189436 );
+	cus -> viwedetails();
+	
+	Customer *C1 = new Customer(200100100489,"Emma", "500/27 isurupura road colombo-15", "EmmaSufa@gmail.com", 1189436 );
+	
+	Loan *01 = new Loan("ID0215", "student loan", 1000000 ,1189436 );
+	cout << "Loan apply" << endl;
+	C1 -> Customer();
+	
+	Complains *01 = new Complains(0012, "Card lost", " ", "2022-05-28");
+	cout << "complain sent" << endl;
+	C1 -> addComplains();
+	
+	Customer * cus1 = new Customer();
+	
+    Creditcard *Cr1 = new Creditcard(21548685988, "2020-02-08", "2023-02-06", 687);
+    cus1 -> addcardDetails(Cr1);
+    Cr1 -> addcard();
+    
+    Login *L = new  Login("Your crush", "Emma Watson", "02458Sufa", "EmmaSufa@gmail.com");
+    L -> UpdateCustomerDetails();
+    
+    MonthlyReport *01 = new MonthlyReport(0010, 28000, " ", "2023-05-29");
+    cout << "MonthlyReport of" << endl;
+    
+   Transection *01 = new Transection(28546,"20:08:12", "2023-04-12", 12000);
+    cout << "Transection of" << endl;
+    
+    LoanPayment *log = new LoanPayment("Monthly Rent", 14000, "Online");
+    log -> UpdatePayment();
+    
+    
+    //----Delete Dynamic objects------
+    
+    delete  cus;
+    delete  C1;
+    delete  cus1;
+    delete  Cr1;
+    delete  L;
+    delete  log;
+    
+}
 
 
 

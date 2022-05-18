@@ -1,0 +1,142 @@
+// S.S.Jayasinghe
+// IT21366154
+// Individual Entities - [ Credit card , Loan ]
+
+
+//01- CreditCard.h
+
+class CreditCard
+{
+	private :
+		 int cardNo;
+		 char Ex_date;
+		 char issue_date;
+		 int CVC;
+		 
+	public :
+		CreditCard();
+		CreditCard(int C_no,const char exdate, const char C_issue_date,int C_CVC);
+		void addcardDetails();
+		void GenerateCardNo();
+		void GenerateTranscript(); 
+		~CreditCard();
+}
+
+
+
+//01- CreditCard.cpp
+
+#include <iostream>
+#include <cstring>
+#include "CreditCard.h"
+using namespace std;
+
+CreditCard :: CreditCard()
+{
+	cardNo = 0;
+	strcpy(Ex_date,"");
+	strcpy(issue_date);
+	CVC = 0;
+}
+CreditCard :: CreditCard(int C_no,const char exdate, const char C_issue_date,int C_CVC)
+{
+	cardNo = C_no;
+	Ex_date = exdate;
+	issue_date = C_issuce_date;
+	CVC = C_CVC;
+}
+void CreditCard :: addcardDetails()
+{
+	
+}
+void CreditCard :: GenerateCardNo()
+{
+	
+}
+void CreditCard :: GenerateTranscrip()
+{
+	
+}
+~CreditCard()
+{
+	cout << "Deleting Employee" << empID << endl; // aggregation
+	
+	 cout << "Destructor runs" << endl;  
+}
+
+//02-Loan.h
+
+#ifndef LOAN_H
+#define LOAN_H
+
+class Loan
+{
+	private:
+		    char LoanID[6];
+		    char Type[15];
+		    double Amount;
+		    int AccNo;
+		    
+		    LoanPayment *Lpay;     //UniDirectional
+		    Customer * Cus;       //Bi-Directional
+		    
+	public:
+		    Loan();
+		    Loan(const char LID[],const char Ltype, double Lamount,int L_AccNo,LoanPayment *L,Customer * C);  
+		    void AddDetails();
+		    void Generate();
+            void Update();
+            ~ Loan();
+};
+
+
+//02-Loan.cpp
+
+#include <iostream>
+#include <cstring>
+#include "Loan.h"
+
+using namespace std;
+
+Loan :: Loan()
+{
+	strcpy(LoanID,"");
+	strcpy(Type,"");
+    Amount = 0;
+	AccNo = 0;
+}
+
+Loan :: Loan(const char LID[],const char Ltype, double Lamount,int L_AccNo,LoanPayment *L,Customer * C)
+{
+	LoanID = LID;
+	Type = Ltype;
+	Amount = Lamount;
+	AccNo = L_AccNo;
+	Lpay = L;
+	Cus = C;
+}
+
+ void Loan :: AddDetails()
+ {
+ 	cout << "Loan ID: " << LoanID << endl;
+ 	cout << "Loan Type: " << Type << endl;
+ 	cout << "Amount: " << Amount << endl;
+ 	cout << "Account NO: " << AccNo << endl;
+ 	Lpay-> UpdatePayment();
+ }
+void Loan :: Generate()
+{
+	
+}
+void Loan :: Update()
+{
+	
+}
+
+Loan :: ~Loan()
+{
+	
+}
+
+
+
